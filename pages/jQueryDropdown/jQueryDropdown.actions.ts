@@ -19,14 +19,6 @@ export class jQueryActions {
     async clickOnCountryDropdown() {
         await this.page.waitForLoadState('domcontentloaded');
         await this.locators.countryDropdown.click();
-
-
-        // await this.locators.countryDropdown.waitFor({ state: 'visible' });
-        // if (await this.locators.countryDropdown.isVisible() && await this.locators.countryDropdown.isEnabled()) {
-        //     await this.locators.countryDropdown.click();
-        // } else {
-        //     throw new Error("Country Dropdown link is not visible or rnabled");
-        // }
     }
 
     // Search country
@@ -42,14 +34,6 @@ export class jQueryActions {
         await this.page.waitForLoadState('domcontentloaded');
         const country = this.page.locator(`//ul[@class="select2-results__options"]/li[text()="${name}"]`);
         await country.click();
-
-
-        // await country.waitFor({ state: 'visible' });
-        // if (await country.isVisible() && await country.isEnabled()) {
-        //     await country.click();
-        // } else {
-        //     throw new Error("Country list item is not visible or enabled");
-        // }
     }
 
     // Get selected states
@@ -77,13 +61,6 @@ export class jQueryActions {
         await this.page.waitForLoadState('domcontentloaded');
         const state = this.page.locator(`//ul[@class="select2-results__options"]/li[text()="${name}"]`);
         await state.click();
-
-        // await state.waitFor({ state: 'visible' });
-        // if (await state.isVisible() && await state.isEnabled()) {
-        //     await state.click();
-        // } else {
-        //     throw new Error("State list item is not visible or enabled");
-        // }
     }
 
     // Get selected states
@@ -113,7 +90,6 @@ export class jQueryActions {
         await this.page.waitForLoadState('domcontentloaded');
         const country = this.page.locator(`//ul[@class="select2-results__options"]/li[@aria-disabled="true" and text()="${name}"]`);
 
-        // await country.waitFor({ state: 'visible' });
         try {
             await country.click({ force: false, timeout: 500 });
             return true;

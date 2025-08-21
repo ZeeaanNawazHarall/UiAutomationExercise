@@ -5,7 +5,6 @@ import { bootstrapListBoxActions } from '../pages/BootstrapListBox/BootstrapList
 test.describe.serial('Bootstrap Happy paths', async ()=>{
     let bootstrap: bootstrapListBoxActions;
 
-
     test.beforeEach(async ({ page }) => {
         const homePage = new HomePageActions(page);
         await homePage.navigateToHomePage();

@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { ajaxFormSubmitLocators } from './AjaxSubmitForm.locators';
 import { HomePageActions } from '../HomePage/homePage.actions';
 

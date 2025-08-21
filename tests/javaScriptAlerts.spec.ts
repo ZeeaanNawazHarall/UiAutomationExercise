@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { checkboxDemoActions } from '../pages/CheckboxDemo/CheckboxDemo.actions';
 import { HomePageActions } from '../pages/HomePage/homePage.actions';
 import { javaScriptAlertActions } from '../pages/JavaScriptAlerts/JavaScriptAlerts.actions';
 
@@ -63,6 +62,5 @@ test.describe('Javascript Alerts Happy Paths', () => {
         const promptText = await javascript.getPromptAlertBoxText();
         expect(promptText).toContain(`You have entered '${inputName}' !`);
     });
-
 
 });

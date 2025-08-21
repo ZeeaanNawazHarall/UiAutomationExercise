@@ -40,12 +40,9 @@ export class dragDropActions {
 
         // Read current value from output
         let current = await slider.evaluate((el: HTMLInputElement) => Number(el.value));
-        // console.log("current value: ", current);
 
         const stepAttr = await slider.getAttribute('step');
         const step = stepAttr ? Number(stepAttr) : 1;
-
-        // console.log(`Current=${current}, Step=${step}, Target=${targetValue}`);
 
         // Decide which arrow to use
         let key = targetValue >= current ? 'ArrowRight' : 'ArrowLeft';
@@ -54,7 +51,6 @@ export class dragDropActions {
             await slider.press(key);
             await this.page.waitForTimeout(50);
             current = await slider.evaluate((el: HTMLInputElement) => Number(el.value));
-            // console.log("Current value after key press:", current);
 
             if ((key === 'ArrowRight' && current > targetValue) ||
                 (key === 'ArrowLeft' && current < targetValue)) {
