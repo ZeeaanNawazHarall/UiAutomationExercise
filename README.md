@@ -47,6 +47,9 @@ The goal of this project is to apply **Page Object Model (POM)** for test automa
 ```
 
  **pages/** → Contains Page Object Model (Actions + Locators) for each component
+ 
+ ---
+
  **tests/** → Contains test specs (`.spec.ts`) mapped to each module
 
 ---
